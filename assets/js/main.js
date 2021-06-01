@@ -16,8 +16,8 @@ class Track {
     this.init();
   }
   action() {
-    if (this.btn.innerHTML == "Go") this.track.startRace();
-    if (this.btn.innerHTML == "Reset") this.track.reset();
+    if (this.btn.innerHTML == "Go") this.startRace();
+    if (this.btn.innerHTML == "Reset") this.reset();
   }
   addHorse(horse) {
     this.horses.push(horse);
