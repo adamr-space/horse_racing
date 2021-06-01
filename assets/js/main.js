@@ -12,6 +12,7 @@ class Track {
   reset() {
     this.horses = [];
     this.track.innerHTML = "";
+    this.btn.innerHTML = "Go";
     this.init();
   }
   addHorse(horse) {
@@ -50,10 +51,7 @@ class Horse {
 
 const action = (btn) => {
   if (btn.innerHTML == "Go") track.startRace();
-  if (btn.innerHTML == "Reset") {
-    btn.innerHTML = "Go";
-    track.reset();
-  }
+  if (btn.innerHTML == "Reset") track.reset();
 };
 
 const colours = ["red", "orange", "yellow", "white", "blue", "indigo", "violet", "black", "brown", "pink", "azure"];
