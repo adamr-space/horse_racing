@@ -15,6 +15,10 @@ class Track {
     this.btn.innerHTML = "Go";
     this.init();
   }
+  action() {
+    if (this.btn.innerHTML == "Go") this.track.startRace();
+    if (this.btn.innerHTML == "Reset") this.track.reset();
+  }
   addHorse(horse) {
     this.horses.push(horse);
     this.track.appendChild(horse.box);
@@ -48,11 +52,6 @@ class Horse {
     move();
   }
 }
-
-const action = (btn) => {
-  if (btn.innerHTML == "Go") track.startRace();
-  if (btn.innerHTML == "Reset") track.reset();
-};
 
 const colours = ["red", "orange", "yellow", "white", "blue", "indigo", "violet", "black", "brown", "pink", "azure"];
 const track = new Track(colours);
