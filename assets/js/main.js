@@ -2,9 +2,11 @@ class Track {
   constructor(colours) {
     this.track = document.getElementById("track");
     this.btn = document.getElementById("start");
+    this.btn.addEventListener("click", this.action.bind(this));
     this.colours = colours;
     this.horses = [];
     this.place = 0;
+    this.init();
   }
   init() {
     this.colours.forEach((c) => this.addHorse(new Horse(c)));
@@ -15,9 +17,9 @@ class Track {
     this.btn.innerHTML = "Go";
     this.init();
   }
-  action() {
-    if (this.btn.innerHTML == "Go") this.startRace();
-    if (this.btn.innerHTML == "Reset") this.reset();
+  action(e) {
+    if (e.target.innerHTML == "Go") this.startRace();
+    if (e.target.innerHTML == "Reset") this.reset();
   }
   addHorse(horse) {
     this.horses.push(horse);
@@ -55,4 +57,3 @@ class Horse {
 
 const colours = ["red", "orange", "yellow", "white", "blue", "indigo", "violet", "black", "brown", "pink", "azure"];
 const track = new Track(colours);
-track.init();
